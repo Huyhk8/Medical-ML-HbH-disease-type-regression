@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -11,8 +12,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, cohen_kappa_score, confusion_matrix, roc_curve, auc
 import matplotlib.pyplot as plt
 
-HbH = pd.read_csv("HbH.csv") 
+file_path = os.path.join(os.path.dirname(__file__), "HbH.csv")
 
+# Đọc file
+HbH = pd.read_csv(file_path)
 # Tách X (đặc trưng đầu vào) và y (biến mục tiêu)
 X_data = HbH.drop(columns=["class2"])
 y_data = HbH["class2"]
@@ -154,4 +157,5 @@ with col2:
             st.warning("⚠️ Vui lòng nhập ít nhất 1 biến trước khi chạy.")
     else:
         st.info("💡 Nhập dữ liệu bên trái và nhấn nút **Bắt đầu phân tích** để xem kết quả.")
+
 
