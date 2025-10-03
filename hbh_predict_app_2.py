@@ -154,4 +154,4 @@ with col2:
             st.warning("⚠️ Vui lòng nhập ít nhất 1 biến trước khi chạy.")
     else:
         st.info("💡 Nhập dữ liệu bên trái và nhấn nút **Bắt đầu phân tích** để xem kết quả.")
-HbH.to_csv("HbH.csv", index=False)
+
